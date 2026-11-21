@@ -1032,52 +1032,52 @@
 <context>
     <name>BreathView</name>
     <message>
-        <location filename="../src/breathview.cpp" line="63" />
+        <location filename="../src/breathrenderer.cpp" line="57" />
         <source>Bereit</source>
         <translation>Ready</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="64" />
+        <location filename="../src/breathrenderer.cpp" line="58" />
         <source>Muster %1</source>
         <translation>Pattern %1</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="66" />
+        <location filename="../src/breathrenderer.cpp" line="60" />
         <source>Gleich geht's los …</source>
         <translation>Starting in a moment …</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="67" />
+        <location filename="../src/breathrenderer.cpp" line="61" />
         <source>Atmen Sie entspannt aus.</source>
         <translation>Breathe out, relaxed.</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="69" />
+        <location filename="../src/breathrenderer.cpp" line="63" />
         <source>Geschafft</source>
         <translation>Well done</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="70" />
+        <location filename="../src/breathrenderer.cpp" line="64" />
         <source>Atmen Sie wieder ganz normal weiter.</source>
         <translation>Now breathe normally again.</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="73" />
+        <location filename="../src/breathview.cpp" line="11" />
         <source>(Leertaste = weiter)</source>
         <translation>(space bar = continue)</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="80" />
+        <location filename="../src/breathrenderer.cpp" line="75" />
         <source>Pause</source>
         <translation>Pause</translation>
     </message>
     <message>
-        <location filename="../src/breathview.cpp" line="81" />
+        <location filename="../src/breathrenderer.cpp" line="76" />
         <source>letzte Runde</source>
         <translation>last round</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/breathview.cpp" line="372" />
+        <location filename="../src/breathrenderer.cpp" line="366" />
         <source>Ziel: %n Ball/Bälle oben halten</source>
         <translation><numerusform>Goal: keep %n ball up</numerusform><numerusform>Goal: keep %n balls up</numerusform></translation>
     </message>
@@ -1085,57 +1085,57 @@
 <context>
     <name>ChartRenderer</name>
     <message>
-        <location filename="../src/chartwidget.cpp" line="137" />
+        <location filename="../src/chartrenderer.cpp" line="138" />
         <source>vorher</source>
         <translation>before</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="137" />
+        <location filename="../src/chartrenderer.cpp" line="138" />
         <source>nachher</source>
         <translation>after</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="149" />
+        <location filename="../src/chartrenderer.cpp" line="150" />
         <source>Übungsminuten je Tag</source>
         <translation>Exercise minutes per day</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="153" />
+        <location filename="../src/chartrenderer.cpp" line="154" />
         <source>SpO₂ (%)</source>
         <translation>SpO₂ (%)</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="155" />
+        <location filename="../src/chartrenderer.cpp" line="156" />
         <source>Peak Flow (l/min)</source>
         <translation>Peak flow (l/min)</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="157" />
+        <location filename="../src/chartrenderer.cpp" line="158" />
         <source>Puls (/min)</source>
         <translation>Pulse (/min)</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="163" />
+        <location filename="../src/chartrenderer.cpp" line="164" />
         <source>Atemtrainer: erreichte Bälle</source>
         <translation>Breathing trainer: balls reached</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="164" />
+        <location filename="../src/chartrenderer.cpp" line="165" />
         <source>Atemtrainer: Haltezeit (s)</source>
         <translation>Breathing trainer: hold time (s)</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="168" />
+        <location filename="../src/chartrenderer.cpp" line="169" />
         <source>Keine Daten im gewählten Zeitraum.</source>
         <translation>No data in the selected period.</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="203" />
+        <location filename="../src/chartrenderer.cpp" line="183" />
         <source>vor der Übung</source>
         <translation>before the exercise</translation>
     </message>
     <message>
-        <location filename="../src/chartwidget.cpp" line="204" />
+        <location filename="../src/chartrenderer.cpp" line="184" />
         <source>nach der Übung</source>
         <translation>after the exercise</translation>
     </message>
@@ -2457,90 +2457,90 @@ Set it up now?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="49" />
+        <location filename="../src/demodata.cpp" line="14" />
         <source>Erika Mustermann</source>
         <translation>Jane Doe</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="50" />
+        <location filename="../src/demodata.cpp" line="15" />
         <source>Max Mustermann</source>
         <translation>John Doe</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="61" />
-        <location filename="../src/main.cpp" line="139" />
+        <location filename="../src/demodata.cpp" line="26" />
+        <location filename="../src/demodata.cpp" line="104" />
         <source>Einschlafübung</source>
         <translation>Sleep exercise</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="61" />
+        <location filename="../src/demodata.cpp" line="26" />
         <source>Entspannung</source>
         <translation>Relaxation</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="79" />
+        <location filename="../src/demodata.cpp" line="44" />
         <source>Sehr ruhig geworden, schnell eingeschlafen.</source>
         <translation>Became very calm, fell asleep quickly.</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="86" />
-        <location filename="../src/main.cpp" line="141" />
+        <location filename="../src/demodata.cpp" line="51" />
+        <location filename="../src/demodata.cpp" line="106" />
         <source>Stressbewältigung</source>
         <translation>Stress relief</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="99" />
+        <location filename="../src/demodata.cpp" line="64" />
         <source>Atemtraining</source>
         <translation>Breathing training</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="116" />
+        <location filename="../src/demodata.cpp" line="81" />
         <source>Atemtrainer</source>
         <translation>Breathing trainer</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="130" />
-        <location filename="../src/main.cpp" line="142" />
+        <location filename="../src/demodata.cpp" line="95" />
+        <location filename="../src/demodata.cpp" line="107" />
         <source>Konzentration</source>
         <translation>Concentration</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="140" />
+        <location filename="../src/demodata.cpp" line="105" />
         <source>Im Bett, Licht aus</source>
         <translation>In bed, lights off</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="148" />
+        <location filename="../src/demodata.cpp" line="113" />
         <source>Arbeitstag</source>
         <translation>Workday</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="154" />
+        <location filename="../src/demodata.cpp" line="119" />
         <source>Wochentags</source>
         <translation>Weekdays</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="163" />
+        <location filename="../src/demodata.cpp" line="128" />
         <source>Wochenende – länger</source>
         <translation>Weekend – longer</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="193" />
+        <location filename="../src/main.cpp" line="70" />
         <source>Das Master-Passwort ist falsch.</source>
         <translation>The master password is wrong.</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="320" />
+        <location filename="../src/main.cpp" line="204" />
         <source>Hinweis</source>
         <translation>Note</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="322" />
+        <location filename="../src/main.cpp" line="206" />
         <source>&lt;b&gt;ViviaBreathe ist kein Medizinprodukt.&lt;/b&gt;&lt;br/&gt;Es ist ein persönliches Übungs-Tagebuch und ersetzt keine ärztliche Beratung. Brechen Sie eine Übung bei Schwindel, Unwohlsein oder Atemnot sofort ab.</source>
         <translation>&lt;b&gt;ViviaBreathe is not a medical device.&lt;/b&gt;&lt;br/&gt;It is a personal exercise diary and does not replace medical advice. Stop an exercise immediately if you feel dizzy, unwell or short of breath.</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="325" />
+        <location filename="../src/main.cpp" line="209" />
         <source>Nicht mehr anzeigen</source>
         <translation>Do not show again</translation>
     </message>
@@ -2650,93 +2650,94 @@ Set it up now?</translation>
 <context>
     <name>ReportPrinter</name>
     <message>
+        <location filename="../src/reportdoc.cpp" line="45" />
+        <location filename="../src/reportdoc.cpp" line="113" />
         <location filename="../src/reportprinter.cpp" line="50" />
-        <location filename="../src/reportprinter.cpp" line="130" />
         <source>ViviaBreathe – Übungstagebuch</source>
         <translation>ViviaBreathe – exercise diary</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="52" />
+        <location filename="../src/reportdoc.cpp" line="47" />
         <source>Zeitraum:</source>
         <translation>Period:</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="54" />
+        <location filename="../src/reportdoc.cpp" line="49" />
         <source>%1 Übungseinheiten, davon %2 vollständig · zusammen %3 Minuten</source>
         <translation>%1 sessions, %2 of them complete · %3 minutes in total</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="75" />
+        <location filename="../src/reportdoc.cpp" line="70" />
         <source>Datum / Uhrzeit</source>
         <translation>Date / time</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="75" />
+        <location filename="../src/reportdoc.cpp" line="70" />
         <source>Übung</source>
         <translation>Exercise</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="75" />
+        <location filename="../src/reportdoc.cpp" line="70" />
         <source>Anlass</source>
         <translation>Occasion</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="75" />
+        <location filename="../src/reportdoc.cpp" line="70" />
         <source>Muster</source>
         <translation>Pattern</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="75" />
+        <location filename="../src/reportdoc.cpp" line="70" />
         <source>Dauer</source>
         <translation>Duration</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="76" />
+        <location filename="../src/reportdoc.cpp" line="71" />
         <source>Zyklen</source>
         <translation>Cycles</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="76" />
+        <location filename="../src/reportdoc.cpp" line="71" />
         <source>SpO₂ vor/nach</source>
         <translation>SpO₂ before/after</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="76" />
+        <location filename="../src/reportdoc.cpp" line="71" />
         <source>Peak Flow vor/nach</source>
         <translation>Peak flow before/after</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="76" />
+        <location filename="../src/reportdoc.cpp" line="71" />
         <source>Puls vor/nach</source>
         <translation>Pulse before/after</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="77" />
+        <location filename="../src/reportdoc.cpp" line="72" />
         <source>Befinden vor/nach</source>
         <translation>Well-being before/after</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="77" />
+        <location filename="../src/reportdoc.cpp" line="72" />
         <source>Atemtrainer</source>
         <translation>Breathing trainer</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/reportprinter.cpp" line="82" />
+        <location filename="../src/reportdoc.cpp" line="77" />
         <source>%n Ball/Bälle</source>
         <translation><numerusform>%n ball</numerusform><numerusform>%n balls</numerusform></translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="104" />
+        <location filename="../src/reportdoc.cpp" line="99" />
         <source>* vorzeitig beendet. SpO₂ in %, Peak Flow in l/min, Puls in Schlägen/min, Befinden 1–10.</source>
         <translation>* stopped early. SpO₂ in %, peak flow in l/min, pulse in beats/min, well-being 1–10.</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="107" />
+        <location filename="../src/reportdoc.cpp" line="102" />
         <source>Erstellt mit ViviaBreathe %1 am %2. ViviaBreathe ist ein persönliches Übungs-Tagebuch und kein Medizinprodukt.</source>
         <translation>Created with ViviaBreathe %1 on %2. ViviaBreathe is a personal exercise diary and not a medical device.</translation>
     </message>
     <message>
-        <location filename="../src/reportprinter.cpp" line="118" />
+        <location filename="../src/reportprinter.cpp" line="38" />
         <source>Druckvorschau – Übungstagebuch</source>
         <translation>Print preview – exercise diary</translation>
     </message>
@@ -2762,32 +2763,32 @@ Set it up now?</translation>
 <context>
     <name>SessionDialog</name>
     <message>
-        <location filename="../src/main.cpp" line="236" />
+        <location filename="../src/main.cpp" line="120" />
         <location filename="../src/sessiondialog.cpp" line="349" />
         <source>Trainingsmodus: Messwerte vor und nach der Übung erfassen</source>
         <translation>Training mode: record measurements before and after the exercise</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="237" />
+        <location filename="../src/main.cpp" line="121" />
         <location filename="../src/sessiondialog.cpp" line="363" />
         <source>Übung starten</source>
         <translation>Start exercise</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="241" />
+        <location filename="../src/main.cpp" line="125" />
         <location filename="../src/sessiondialog.cpp" line="486" />
         <source>Weiter zur Übung</source>
         <translation>Continue to the exercise</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="252" />
+        <location filename="../src/main.cpp" line="136" />
         <location filename="../src/sessiondialog.cpp" line="486" />
         <location filename="../src/sessiondialog.cpp" line="561" />
         <source>Weiter</source>
         <translation>Continue</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="256" />
+        <location filename="../src/main.cpp" line="140" />
         <location filename="../src/sessiondialog.cpp" line="785" />
         <source>Im Tagebuch speichern</source>
         <translation>Save to diary</translation>

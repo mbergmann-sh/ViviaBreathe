@@ -171,7 +171,7 @@ MusicPlayer::MusicPlayer(QObject *parent) : QObject(parent), d(new Impl)
     connect(d->player, qOverload<QMediaPlayer::Error>(&QMediaPlayer::error), this, [this](QMediaPlayer::Error) {
         const QString msg = d->player->errorString();
 #  endif
-        emit errorOccurred(tr("%1 lässt sich nicht abspielen: %2").arg(QFileInfo(currentFile()).fileName(), msg));
+        emit errorOccurred(tr("%1 lässt sich nicht abspielen: %2").arg((currentFile().contains(QLatin1String("://")) ? QUrl(currentFile()).fileName() : QFileInfo(currentFile()).fileName()), msg));
         // nächste Datei versuchen, aber nicht endlos
         if (++m_errors < m_list.size()) QTimer::singleShot(200, this, &MusicPlayer::next);
         else stop();
@@ -225,7 +225,9 @@ void MusicPlayer::playIndex(int i)
 {
     m_index = i;
 #ifdef VB_HAVE_MULTIMEDIA
-    const QUrl url = QUrl::fromLocalFile(m_list.value(i));
+    // Pfad oder URL (mobile App: content://… aus der Dateiauswahl von Android, file:///…)
+    const QString f = m_list.value(i);
+    const QUrl url = f.contains(QLatin1String("://")) ? QUrl(f) : QUrl::fromLocalFile(f);
 #  if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     d->player->setSource(url);
 #  else

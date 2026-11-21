@@ -13,3 +13,4 @@ tests/*/build/
 installer/qtifw/data/
 installer/qtifw/packages_*/
 installer/Output/
+android-build/

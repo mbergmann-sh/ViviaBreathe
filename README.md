@@ -5,6 +5,7 @@ Qt 6 (bzw. Qt 5.15 für ältere macOS-Versionen) / C++17 / qmake –
 [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0).
 Technisch und optisch an [VitaParms](https://github.com/mbergmann-sh/VitaParms) angelehnt.
 Bis Version 0.4.0 hieß das Programm **VitaBreathe** (siehe [Umstieg von VitaBreathe](#umstieg-von-vitabreathe)).
+Seit 0.6.0 gibt es eine **App für Android-Smartphones und -Tablets** (siehe [Mobile App](#mobile-app-android)).
 
 > **Kein Medizinprodukt.** ViviaBreathe ist ein persönliches Tagebuch für Atemübungen. Es stellt
 > keine Diagnosen und ersetzt keine ärztliche Beratung. Die Verwendung erfolgt auf eigene Gefahr.
@@ -74,7 +75,8 @@ macOS/Linux: `macdeployqt` bzw. `linuxdeployqt`. Das Programmsymbol liegt als `.
 ```sh
 lupdate ViviaBreathe.pro          # neue/geänderte Texte erfassen
 lupdate -pluralonly -no-obsolete src -ts translations/viviabreathe_de.ts   # deutsche Mehrzahlformen (%n)
-python3 tools/fill_ts.py         # Englisch und deutsche Mehrzahlformen aus tools/translations_en.py eintragen
+python3 tools/fill_ts.py         # Englisch und deutsche Mehrzahlformen eintragen (Desktop und mobile App)
+# mobile App: zuvor lupdate für mobile/qml und mobile/src, siehe mobile/README.md
 ```
 Alternativ in Qt Linguist bearbeiten. Quellsprache ist Deutsch.
 
@@ -86,7 +88,7 @@ VitaParms) und `src/audio.cpp` (QMediaPlayer/QAudioOutput) aus. Getestet mit Qt 
 ## Aufbau
 
 ```
-ViviaBreathe.pro      Projektdatei (Desktop)        core.pri  Kern (auch für die spätere mobile App)
+ViviaBreathe.pro      Projektdatei (Desktop)        core.pri  Kern (Desktop und mobile App)
 version.pri          Versionsnummer                desktop.pri  Qt-Widgets-Oberfläche
 3rdparty/            sqlite3mc, android_openssl (aus VitaParms)
 resources/           Symbole (SVG → zur Laufzeit eingefärbt), Signaltöne (WAV), viviabreathe.qrc
@@ -96,15 +98,20 @@ src/
   breathengine.*     Taktgeber: Vorlauf, Schritte einer Runde, Pause, „weiter, wenn bereit“
   i18n.*             Sprache (Deutsch/Englisch), Übersetzungen laden
   windowstate.*      Fensterpositionen und -größen merken (app-weiter Ereignisfilter)
-  breathview.*       Animation (Quadrat mit Punkt, atmender Kreis)
+  breathrenderer.*   Animation zeichnen (Quadrat mit Punkt, atmender Kreis, TriBall) – Desktop und App
+  breathview.*       Animation als Widget (Desktop)
   sessiondialog.*    Ablauf: Vorbereitung → Messung → Übung → Messung → Zusammenfassung
   audio.*            Signaltöne (QSoundEffect), MP3-Wiedergabe mit Überblenden, Vibration (Android)
-  historypage.*, chartwidget.*, reportprinter.*   Tagebuch, Grafik, Druck/PDF
+  chartrenderer.*    Verlaufsgrafik zeichnen – Bildschirm, Druck, PDF, App
+  reportdoc.*        Übungstagebuch als Dokument, PDF (ohne Qt Print Support) und CSV
+  demodata.*         Beispieldaten (Demo-Modus, Bildschirmfotos)
+  historypage.*, chartwidget.*, reportprinter.*   Tagebuch, Grafik, Druck/PDF (Desktop)
   eventspage.*, alarmpage.*, reminderservice.*, schedule.*   Erinnerungen, Wecker, Einschlafen
   dbsync.*           Abgleich über website/api/sync.php
   themes.*, screenfit.*, sqlquery.*, qtcompat.h   aus VitaParms übernommen
 translations/        viviabreathe_en.ts (Englisch), viviabreathe_de.ts (nur deutsche Mehrzahlformen)
 resources/illustrations/  Anleitungs- und Haltungsbilder (SVG, erzeugt mit tools/make_illustrations.py)
+mobile/              App für Android-Smartphones und -Tablets (Qt Quick), siehe mobile/README.md
 installer/           Windows-Installer (Qt Installer Framework, DE/EN), siehe installer/README.md
 website/             Abgleich-Server (PHP), siehe website/README.md
 tests/synctest/      Test des Abgleichs gegen einen lokalen PHP-Server
@@ -152,8 +159,25 @@ Die Umstellung geschieht automatisch beim ersten Öffnen; vorher empfiehlt sich 
 ## Noch offen (nach Aufforderung)
 
 - Handbücher (PDF)
-- Mobile App (Android/iOS) – Kern (`core.pri`), android_openssl und die Vibrations-Schnittstelle sind vorbereitet
+- iOS-App (die Android-App gibt es seit 0.6.0)
 - Test des Windows-Installers auf einem echten Windows-Rechner
+
+## Mobile App (Android)
+
+`mobile/ViviaBreatheMobile.pro` baut die Touch-Fassung für Android-Smartphones und -Tablets (Qt
+Quick, Qt 6.10 oder neuer mit Android-Komponente; Anleitung in [mobile/README.md](mobile/README.md)).
+Sie nutzt denselben Kern, dieselbe verschlüsselte Datenbank und denselben Abgleich wie das
+Desktop-Programm und kann alles, was der Alltag braucht: Übungen mit Animation, Tönen, Vibration
+und Musik, Trainingsmodus, Verlauf mit Grafik, PDF/CSV teilen, Erinnerungen als
+Android-Benachrichtigung, Wecker und Einschlafmusik auch bei geschlossener App, mehrere Benutzer.
+
+| Smartphone: Übungen | Box-Atmen | Atemtrainer TriBall | Verlauf |
+|---|---|---|---|
+| ![Übungen](docs/images/mobile/phone_01_uebungen.png) | ![Box-Atmen](docs/images/mobile/phone_06_uebung_box.png) | ![TriBall](docs/images/mobile/phone_10_uebung_triball.png) | ![Verlauf](docs/images/mobile/phone_14_verlauf_grafik.png) |
+| **Vorbereitung** | **Atemnot-Hilfe** | **Wecker & Einschlafen** | **4-7-8 (dunkel)** |
+| ![Vorbereitung](docs/images/mobile/phone_03_vorbereitung.png) | ![Atemnot-Hilfe](docs/images/mobile/phone_12_atemnot_hilfe.png) | ![Wecker](docs/images/mobile/phone_16_wecker_einschlafen.png) | ![4-7-8](docs/images/mobile/phone_dark_09_uebung_478.png) |
+
+![Tablet quer: Übungen](docs/images/mobile/tablet_01_uebungen.png)
 
 ## Umstieg von VitaBreathe
 

@@ -3,8 +3,8 @@
 <Package>
     <DisplayName>ViviaBreathe</DisplayName>
     <Description>Guided breathing exercises with diary, reminders, alarm clock and sleep function</Description>
-    <Version>0.5.0</Version>
-    <ReleaseDate>2026-11-13</ReleaseDate>
+    <Version>0.6.0</Version>
+    <ReleaseDate>2026-11-20</ReleaseDate>
     <Default>true</Default>
     <ForcedInstallation>true</ForcedInstallation>
     <SortingPriority>100</SortingPriority>

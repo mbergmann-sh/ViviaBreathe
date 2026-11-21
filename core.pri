@@ -12,6 +12,10 @@ SOURCES += \
     $$PWD/src/database.cpp \
     $$PWD/src/breathmodules.cpp \
     $$PWD/src/breathengine.cpp \
+    $$PWD/src/breathrenderer.cpp \
+    $$PWD/src/chartrenderer.cpp \
+    $$PWD/src/reportdoc.cpp \
+    $$PWD/src/demodata.cpp \
     $$PWD/src/audio.cpp \
     $$PWD/src/schedule.cpp \
     $$PWD/src/dbsync.cpp \
@@ -27,6 +31,10 @@ HEADERS += \
     $$PWD/src/datatypes.h \
     $$PWD/src/breathmodules.h \
     $$PWD/src/breathengine.h \
+    $$PWD/src/breathrenderer.h \
+    $$PWD/src/chartrenderer.h \
+    $$PWD/src/reportdoc.h \
+    $$PWD/src/demodata.h \
     $$PWD/src/audio.h \
     $$PWD/src/schedule.h \
     $$PWD/src/dbsync.h \

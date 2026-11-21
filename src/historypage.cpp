@@ -337,19 +337,5 @@ void HistoryPage::exportCsv()
         QMessageBox::warning(this, tr("CSV"), file.errorString());
         return;
     }
-    QTextStream out(&file);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    out.setCodec("UTF-8");
-#endif
-    out << "\xEF\xBB\xBF";   // BOM für Excel
-    auto q = [](QString s) { return QLatin1Char('"') + s.replace(QLatin1Char('"'), QStringLiteral("\"\"")) + QLatin1Char('"'); };
-    auto n = [](int v) { return v >= 0 ? QString::number(v) : QString(); };
-    out << "Beginn;Uebung;Anlass;Muster;Geplant_s;Dauer_s;Zyklen;Vollstaendig;SpO2_vor;SpO2_nach;PeakFlow_vor;PeakFlow_nach;"
-           "Puls_vor;Puls_nach;Befinden_vor;Befinden_nach;Atemtrainer_Baelle;Atemtrainer_Haltezeit_s;Notiz\n";
-    for (const SessionRecord &s : m_sessions)
-        out << s.started.toString(Qt::ISODate) << ';' << q(BreathModules::displayName(s.moduleId)) << ';' << q(s.eventName)
-            << ';' << q(s.pattern) << ';' << s.plannedSec << ';' << s.actualSec << ';' << s.cycles << ';'
-            << (s.completed ? 1 : 0) << ';' << n(s.spo2Before) << ';' << n(s.spo2After) << ';' << n(s.pfBefore) << ';'
-            << n(s.pfAfter) << ';' << n(s.pulseBefore) << ';' << n(s.pulseAfter) << ';' << n(s.feelingBefore) << ';'
-            << n(s.feelingAfter) << ';' << n(s.deviceBalls) << ';' << n(s.deviceHoldSec) << ';' << q(s.note) << '\n';
+    file.write(ReportDoc::csv(m_sessions));
 }

@@ -52,15 +52,22 @@ QString install(QCoreApplication &app)
     if (appTr->load(QStringLiteral(":/i18n/viviabreathe_%1.qm").arg(lang)))
         app.installTranslator(appTr);
     s_installed << appTr;
+    // mobile App: zusätzlich die Texte der Touch-Oberfläche
+    auto *mobileTr = new QTranslator(&app);
+    if (mobileTr->load(QStringLiteral(":/i18n/viviabreathe_mobile_%1.qm").arg(lang)))
+        app.installTranslator(mobileTr);
+    s_installed << mobileTr;
     return lang;
 }
 
 void restartApplication()
 {
+#if QT_CONFIG(process)
     QStringList args = QCoreApplication::arguments();
     args.removeFirst();
     QProcess::startDetached(QCoreApplication::applicationFilePath(), args);
-    qApp->quit();
+#endif
+    qApp->quit();        // mobile App: wechselt die Sprache ohne Neustart (siehe AppController)
 }
 
 } // namespace I18n

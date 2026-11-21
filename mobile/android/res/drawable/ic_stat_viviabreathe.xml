@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Symbol in der Statusleiste: Lunge mit Luftröhre (einfarbig, Android färbt es selbst) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12,3 L12,10 M12,10 C12,11.5 10.8,12.3 9.5,13 M12,10 C12,11.5 13.2,12.3 14.5,13" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineJoin="round"
+        android:pathData="M9.5,7 C6,7 3.5,11.5 3.5,16.5 C3.5,19.5 5.5,20.5 8,19.5 C9.5,18.9 10,17.5 10,16 L10,8 C10,7.4 9.8,7 9.5,7 Z M14.5,7 C18,7 20.5,11.5 20.5,16.5 C20.5,19.5 18.5,20.5 16,19.5 C14.5,18.9 14,17.5 14,16 L14,8 C14,7.4 14.2,7 14.5,7 Z" />
+</vector>

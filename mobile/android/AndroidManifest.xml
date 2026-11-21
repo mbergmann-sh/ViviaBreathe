@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!-- ViviaBreathe mobil – Android-Manifest (Grundlage: Qt-6-Vorlage; die Platzhalter mit %%INSERT…%%
+     füllt androiddeployqt beim Bauen aus). Ergänzt: Paketname, Symbol, keine Google-Sicherung,
+     Benachrichtigungen und Wecker (Empfänger für AlarmManager und Neustart), Vordergrunddienst für die
+     Musik von Wecker und Einschlafen, Vibration. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.mbergmann.viviabreathe"
+    android:installLocation="auto"
+    android:versionCode="-- %%INSERT_VERSION_CODE%% --"
+    android:versionName="-- %%INSERT_VERSION_NAME%% --">
+    <!-- %%INSERT_PERMISSIONS -->
+    <!-- %%INSERT_FEATURES -->
+    <!-- Erinnerungen und Wecker: Benachrichtigungen (Android 13+), pünktliche Wecker (Android 14+: vom
+         Anwender erteilt, sonst ungefähr), nach einem Neustart neu stellen -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Musik für Wecker und Einschlafen bei ausgeschaltetem Bildschirm -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Wecker: auch auf dem Sperrbildschirm im Vollbild (Android 14+: nur, wenn der Anwender es erlaubt) -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <!-- Vibrationsimpuls beim Phasenwechsel -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Abgleich über den eigenen Webserver -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.vibrator" android:required="false" />
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+    <!-- Android 11 und neuer (Paketsichtbarkeit): Apps zum Teilen bzw. Anzeigen von PDF und CSV -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="*/*" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="application/pdf" />
+        </intent>
+    </queries>
+
+    <application
+        android:name="org.qtproject.qt.android.bindings.QtApplication"
+        android:hardwareAccelerated="true"
+        android:label="ViviaBreathe"
+        android:icon="@drawable/icon"
+        android:allowBackup="false"
+        android:enableOnBackInvokedCallback="false">
+        <!-- enableOnBackInvokedCallback="false": Android 16 (Ziel-API 36) meldet „Zurück“ sonst nicht mehr
+             als Taste; die App ginge dann nicht eine Seite zurück, sondern würde geschlossen. -->
+        <activity
+            android:name="org.qtproject.qt.android.bindings.QtActivity"
+            android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
+            android:label="ViviaBreathe"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="-- %%INSERT_APP_LIB_NAME%% --" />
+            <meta-data
+                android:name="android.app.arguments"
+                android:value="-- %%INSERT_APP_ARGUMENTS%% --" />
+        </activity>
+
+        <!-- angetippte Benachrichtigung merken und die App nach vorn holen -->
+        <activity
+            android:name="de.mbergmann.viviabreathe.OpenActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- Erinnerung bzw. Wecker zur gestellten Zeit (auch wenn die App nicht läuft) -->
+        <receiver
+            android:name="de.mbergmann.viviabreathe.ReminderReceiver"
+            android:exported="false" />
+        <!-- nach einem Neustart (oder wenn pünktliche Wecker erlaubt wurden) neu stellen -->
+        <receiver
+            android:name="de.mbergmann.viviabreathe.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Musik für Wecker und Einschlafen -->
+        <service
+            android:name="de.mbergmann.viviabreathe.PlaybackService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.qtprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/qtprovider_paths"/>
+        </provider>
+    </application>
+</manifest>

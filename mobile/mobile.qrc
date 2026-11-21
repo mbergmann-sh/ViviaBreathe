@@ -1,0 +1,59 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>qml/Main.qml</file>
+        <file>qml/Theme.qml</file>
+        <file>qml/qmldir</file>
+        <file>qml/components/AlarmOverlay.qml</file>
+        <file>qml/components/AppTitle.qml</file>
+        <file>qml/components/ButtonRow.qml</file>
+        <file>qml/components/Card.qml</file>
+        <file>qml/components/CenterCard.qml</file>
+        <file>qml/components/Confirm.qml</file>
+        <file>qml/components/PageHeader.qml</file>
+        <file>qml/components/PlaylistEditor.qml</file>
+        <file>qml/components/ReminderHint.qml</file>
+        <file>qml/components/ScrollPage.qml</file>
+        <file>qml/components/SectionTitle.qml</file>
+        <file>qml/components/SleepBar.qml</file>
+        <file>qml/components/TimePicker.qml</file>
+        <file>qml/components/Toast.qml</file>
+        <file>qml/components/VArea.qml</file>
+        <file>qml/components/VButton.qml</file>
+        <file>qml/components/VCheck.qml</file>
+        <file>qml/components/VChip.qml</file>
+        <file>qml/components/VCombo.qml</file>
+        <file>qml/components/VField.qml</file>
+        <file>qml/components/VSlider.qml</file>
+        <file>qml/components/VStepper.qml</file>
+        <file>qml/components/VSwitch.qml</file>
+        <file>qml/components/WeekdayPicker.qml</file>
+        <file>qml/pages/AboutPage.qml</file>
+        <file>qml/pages/AlarmEditPage.qml</file>
+        <file>qml/pages/AlarmsView.qml</file>
+        <file>qml/pages/DisclaimerPage.qml</file>
+        <file>qml/pages/EventEditPage.qml</file>
+        <file>qml/pages/EventsView.qml</file>
+        <file>qml/pages/ExercisesView.qml</file>
+        <file>qml/pages/GuidePage.qml</file>
+        <file>qml/pages/HistoryView.qml</file>
+        <file>qml/pages/HomePage.qml</file>
+        <file>qml/pages/LanguagePage.qml</file>
+        <file>qml/pages/LoginPage.qml</file>
+        <file>qml/pages/MeasurePage.qml</file>
+        <file>qml/pages/PasswordPage.qml</file>
+        <file>qml/pages/PrepPage.qml</file>
+        <file>qml/pages/RunPage.qml</file>
+        <file>qml/pages/SessionEditPage.qml</file>
+        <file>qml/pages/SettingsView.qml</file>
+        <file>qml/pages/SetupPage.qml</file>
+        <file>qml/pages/SleepEditPage.qml</file>
+        <file>qml/pages/SleepRunPage.qml</file>
+        <file>qml/pages/SummaryPage.qml</file>
+        <file>qml/pages/SyncPage.qml</file>
+        <file>qml/pages/UsersPage.qml</file>
+        <file alias="fonts/AtkinsonHyperlegible_400Regular.ttf">fonts/AtkinsonHyperlegible_400Regular.ttf</file>
+        <file alias="fonts/AtkinsonHyperlegible_700Bold.ttf">fonts/AtkinsonHyperlegible_700Bold.ttf</file>
+        <file alias="license/LICENSE">../LICENSE</file>
+    </qresource>
+</RCC>

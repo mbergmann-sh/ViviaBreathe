@@ -13,7 +13,7 @@
 <context>
     <name>BreathView</name>
     <message numerus="yes">
-        <location filename="../src/breathview.cpp" line="372" />
+        <location filename="../src/breathrenderer.cpp" line="366" />
         <source>Ziel: %n Ball/Bälle oben halten</source>
         <translation><numerusform>Ziel: %n Ball oben halten</numerusform><numerusform>Ziel: %n Bälle oben halten</numerusform></translation>
     </message>
@@ -60,7 +60,7 @@
 <context>
     <name>ReportPrinter</name>
     <message numerus="yes">
-        <location filename="../src/reportprinter.cpp" line="82" />
+        <location filename="../src/reportdoc.cpp" line="77" />
         <source>%n Ball/Bälle</source>
         <translation><numerusform>%n Ball</numerusform><numerusform>%n Bälle</numerusform></translation>
     </message>

@@ -2,18 +2,13 @@
 // SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 #pragma once
 
-#include "chartwidget.h"
-#include "datatypes.h"
+#include "reportdoc.h"
 
 class QWidget;
 class QPrinter;
 
 namespace ReportPrinter {
-struct Options {
-    bool chart = true;
-    bool table = true;
-    bool notes = true;
-};
+using Options = ReportDoc::Options;
 void preview(QWidget *parent, const User &user, const ChartSpec &spec, const Options &o);
 bool savePdf(QWidget *parent, const User &user, const ChartSpec &spec, const Options &o, const QString &file);
 void render(QPrinter *printer, const User &user, const ChartSpec &spec, const Options &o);
